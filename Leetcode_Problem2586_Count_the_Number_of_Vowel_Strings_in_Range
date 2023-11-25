@@ -1,0 +1,17 @@
+int vowelStrings(char** words, int wordsSize, int left, int right) {
+    int count = 0;
+    for( int i = left ; i <= right ; i++)
+        count += ((words[i][0] == 'a' || words[i][0] == 'e' || words[i][0] == 'i' || words[i][0] == 'o' || words[i][0] == 'u') && (words[i][strlen(words[i])-1] == 'a' || words[i][strlen(words[i])-1] == 'e' || words[i][strlen(words[i])-1] == 'i' || words[i][strlen(words[i])-1] == 'o' || words[i][strlen(words[i])-1] == 'u')) ? 1 : 0;
+    return count;
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+int vowelStrings(char ** words, int wordsSize, int left, int right){
+    int count = 0 , vowel[26] = {1,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0};
+    for( int i = left ; i <= right ; i++)
+        count += ((vowel[words[i][0]-'a']) && (vowel[words[i][strlen(words[i])-1]-'a'])) ? 1 : 0;
+    return count;
+}
